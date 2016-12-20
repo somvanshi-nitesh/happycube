@@ -1,0 +1,22 @@
+Main class: Solution.java
+Input: Input are encoded directly from src/main/resources/resource/input.txt
+Output: Possible solution (if any) is written to location src/main/resources/result/result.txt
+Test class: TestSolution.java
+
+
+Logic for Happy cube solution: Cube class contains six faces which has it's implementation in Face class, whereas face has variable of type Piece which in turn has variables of type edge. Cube class contains logic to see if current iteration faces fits to the make a possible solution for the cube
+1st run – Assume current face is a possible fit in the formation of a cube
+2nd run- 1st face – get right edge of it, and check if left edge of the 2nd face fits
+3rd run - Check if right edge of 1st face fits left edge of 2nd face or right edge of 3rd face fits to the left edge of the 2nd face and so on.
+
+Similarly check all possible combinations and set flags if corner, middle fits to form an edge and then check all possible combination of edges to set flags if North-West, North-east, South-west, South-east corner and body fits to form a face and then all possible combination to form a cube to render a solution for the problem.
+
+Logic to check if First Corner and second corner of an edge is filled – if character present at index 0 is filled i.e. has value ‘o’ and if character present at lastcolumn-1 has value ‘o’
+Match middle – By comparing column 2 and column – (last column-1) of current edge and edge which is currently passed to the method to find if it’s perfect fit.
+Flipside : By reversing the actual pattern
+Side : Side has four Edge type variables , left, right , top and bottom.
+Methods to rotate edges and flip side to find possible solution.
+And check for possibility of NE, NW , SW and SE side corners are filled or not
+
+							
+ 
